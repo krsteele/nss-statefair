@@ -8,14 +8,15 @@ export const TicketBooth = () => {
         <div class="ticketBooth">
             <button id="rideTicket">Ride Ticket</button>
             <button id="foodTicket">Food Ticket</button>
-        </div>
+            <button id="gameTicket">Game Ticket</button>
+            </div>
     `
 }
 
 // RIDE EVENT
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "rideTicket") {
-        // console.log("button was clicked!")
+        // console.log("ride button was clicked!")
         const rideEvent = new CustomEvent("rideTicketPurchased")
         eventHub.dispatchEvent(rideEvent)
     }
@@ -23,8 +24,16 @@ eventHub.addEventListener("click", clickEvent => {
 // FOOD EVENT
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "foodTicket") {
-        // console.log("button was clicked!")
+        // console.log("food button was clicked!")
         const foodEvent = new CustomEvent("foodTicketPurchased")
         eventHub.dispatchEvent(foodEvent)
+    }
+})
+// GAME EVENT
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "gameTicket") {
+        // console.log("game button was clicked!")
+        const gameEvent = new CustomEvent("gameTicketPurchased")
+        eventHub.dispatchEvent(gameEvent)
     }
 })

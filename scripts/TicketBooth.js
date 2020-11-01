@@ -9,6 +9,7 @@ export const TicketBooth = () => {
             <button id="rideTicket">Ride Ticket</button>
             <button id="foodTicket">Food Ticket</button>
             <button id="gameTicket">Game Ticket</button>
+            <button id="sideshowTicket">Sideshow Ticket</button>
             </div>
     `
 }
@@ -35,5 +36,13 @@ eventHub.addEventListener("click", clickEvent => {
         // console.log("game button was clicked!")
         const gameEvent = new CustomEvent("gameTicketPurchased")
         eventHub.dispatchEvent(gameEvent)
+    }
+})
+// SIDESHOW EVENT
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "sideshowTicket") {
+        // console.log("sideshow button was clicked!")
+        const sideshowEvent = new CustomEvent("sideshowTicketPurchased")
+        eventHub.dispatchEvent(sideshowEvent)
     }
 })
